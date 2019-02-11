@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!-- 
+ * tiles.xml
+ *
+ * Copyright (C) 2018 Universidad de Sevilla
+ * 
+ * The use of this project is hereby constrained to the conditions of the 
+ * TDG Licence, a copy of which you may download from 
+ * http://www.tdg-seville.info/License.html
+ -->
+
+<!DOCTYPE tiles-definitions PUBLIC
+       "-//Apache Software Foundation//DTD Tiles Configuration 2.0//EN"
+       "http://tiles.apache.org/dtds/tiles-config_2_0.dtd">
+       
+<tiles-definitions>
+
+	<definition name="customerEndorsement/list" extends="master.page">	
+		<put-attribute name="title" value="List Customer Endorsement" />
+		<put-attribute name="body" value="/views/customerEndorsement/list.jsp" />
+	</definition>
+	
+	<definition name="customerEndorsement/edit" extends="master.page">	
+		<put-attribute name="title" value="Edit Customer Endorsement" />
+		<put-attribute name="body" value="/views/handyWorkerEndorsement/edit.jsp" />
+	</definition>
+	
+	<definition name="customerEndorsement/show" extends="master.page">	
+		<put-attribute name="title" value="Show Customer Endorsement" />
+		<put-attribute name="body" value="/views/customerrEndorsement/show.jsp" />
+	</definition>
+	
+</tiles-definitions>

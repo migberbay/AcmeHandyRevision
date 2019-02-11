@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!-- 
+ * tiles.xml
+ *
+ * Copyright (C) 2018 Universidad de Sevilla
+ * 
+ * The use of this project is hereby constrained to the conditions of the 
+ * TDG Licence, a copy of which you may download from 
+ * http://www.tdg-seville.info/License.html
+ -->
+
+<!DOCTYPE tiles-definitions PUBLIC
+       "-//Apache Software Foundation//DTD Tiles Configuration 2.0//EN"
+       "http://tiles.apache.org/dtds/tiles-config_2_0.dtd">
+       
+<tiles-definitions>
+
+	<definition name="actor/show" extends="master.page">
+		<put-attribute name="title" value="Show Personal Data" />
+		<put-attribute name="body" value="/views/actor/show.jsp" />
+	</definition>
+	
+	<definition name="actor/edit" extends="master.page">	
+		<put-attribute name="title" value="Edit Personal Data" />
+		<put-attribute name="body" value="/views/actor/edit.jsp" />
+	</definition>
+	
+	<definition name="actor/createCustomer" extends="master.page">	
+		<put-attribute name="title" value="Create a new Customer" />
+		<put-attribute name="body" value="/views/actor/createCustomer.jsp" />
+	</definition>
+	
+	<definition name="actor/createHandyWorker" extends="master.page">	
+		<put-attribute name="title" value="Create a new Handy Worker" />
+		<put-attribute name="body" value="/views/actor/createHandyWorker.jsp" />
+	</definition>
+	
+	<definition name="actor/createSponsor" extends="master.page">	
+		<put-attribute name="title" value="Create a new Sponsor" />
+		<put-attribute name="body" value="/views/actor/createSponsor.jsp" />
+	</definition>
+	
+</tiles-definitions>
