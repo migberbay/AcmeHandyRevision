@@ -1,0 +1,30 @@
+/* common.css
+ *
+ * Copyright (C) 2018 Universidad de Sevilla
+ * 
+ * The use of this project is hereby constrained to the conditions of the 
+ * TDG Licence, a copy of which you may download from 
+ * http://www.tdg-seville.info/License.html
+ * 
+ */
+
+.error {
+	color: red;
+	font-weight: bolder;
+}
+
+.message {
+	color: red;
+	font-weight: bolder;
+}
+
+div.page-header{
+	text-align: center;
+	min-height: 260px;
+	min-width: 525px;
+	margin: 0px 0 20px;
+}
+
+.banner {
+	max-height: 260px;
+}
