@@ -73,7 +73,7 @@ public class FinderServiceTest extends AbstractTest {
 		UserAccount savedua = accountService.save(userAccount);
 		handyWorker.setUserAccount(savedua);
 
-		handyWorkerService.save(handyWorker);
+		HandyWorker saved = handyWorkerService.save(handyWorker);
 		this.authenticate(null);
 		
 		this.authenticate("handyworker12");
@@ -86,6 +86,7 @@ public class FinderServiceTest extends AbstractTest {
 		finder.setStartDate(fecha);
 		finder.setEndDate(fecha);
 		finder.setCategory(null);
+		finder.setHandyWorker(saved);
 //		final Collection<FixUpTask> fixUpTasks = new ArrayList<FixUpTask>();
 //		finder.setFixUpTasks(fixUpTasks);
 		Finder savedf = finderService.save(finder);
@@ -123,7 +124,7 @@ public class FinderServiceTest extends AbstractTest {
 	@Test
 	public void testDelete() {
 		this.authenticate("handyworker3");
-		final Finder finder = this.finderService.findOne(15447);
+		final Finder finder = (Finder) this.finderService.findAll().toArray()[0];
 		this.finderService.delete(finder);
 	}
 

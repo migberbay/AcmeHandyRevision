@@ -76,7 +76,7 @@ public class BoxServiceTest extends AbstractTest {
 
 		result = boxService.save(box);
 
-		Assert.isTrue(boxService.findByActorId(15589).contains(result));
+		Assert.isTrue(boxService.findByActorId(actor.getId()).contains(result));
 		Assert.isTrue(boxService.findAll().contains(result));
 	}
 
@@ -97,7 +97,7 @@ public class BoxServiceTest extends AbstractTest {
 
 		result = boxService.save(box);
 
-		Assert.isTrue(boxService.findByActorId(15589).contains(result));
+		Assert.isTrue(boxService.findByActorId(actor.getId()).contains(result));
 		Assert.isTrue(boxService.findAll().contains(result));
 
 		boxService.delete(result);

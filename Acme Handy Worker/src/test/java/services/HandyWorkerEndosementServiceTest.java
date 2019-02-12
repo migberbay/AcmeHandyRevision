@@ -28,7 +28,7 @@ public class HandyWorkerEndosementServiceTest extends AbstractTest{
 			private HandyWorkerEndorsementService handyWorkerEndorsementService;
 			
 			@Autowired
-			private CustomerService customerService;			
+			private HandyWorkerService handyWorkerService;			
 			
 			// Tests ----------------------------------------------------------------------
 			
@@ -51,20 +51,17 @@ public class HandyWorkerEndosementServiceTest extends AbstractTest{
 			@Test 
 			public void testSaveHandyWorkerEndorsement(){
 				HandyWorkerEndorsement handyWorkerEndorsement, saved;
-//				HandyWorker hw;
-				Customer c;
+				HandyWorker hw;
 				Collection<HandyWorkerEndorsement> handyWorkerEndorsements;
-				super.authenticate("handyworker1");						
+				super.authenticate("customer1");						
 				handyWorkerEndorsement = handyWorkerEndorsementService.create();					
-//				hw = handyWorkerService.findOne(15726);
-				c = (Customer) customerService.findAll().toArray()[0];
-//				
+				hw = (HandyWorker) handyWorkerService.findAll().toArray()[0];
+				
 //				Date current = new Date(System.currentTimeMillis() - 1000);
 //				
 //				handyWorkerEndorsement.setMoment(current);
 				handyWorkerEndorsement.setText("Esto es un texto de prueba");
-//				handyWorkerEndorsement.setHandyWorker(hw);
-				handyWorkerEndorsement.setCustomer(c);
+				handyWorkerEndorsement.setHandyWorker(hw);
 				
 				saved = handyWorkerEndorsementService.save(handyWorkerEndorsement);					
 
@@ -80,7 +77,7 @@ public class HandyWorkerEndosementServiceTest extends AbstractTest{
 			@Test 
 			public void testUpdateHandyWorkerEndorsement(){
 				HandyWorkerEndorsement handyWorkerEndorsement;
-				super.authenticate("handyworker2");						
+				super.authenticate("customer2");						
 				handyWorkerEndorsement = (HandyWorkerEndorsement) handyWorkerEndorsementService.findAll().toArray()[0];				
 				handyWorkerEndorsement.setText("Texto de prueba 2");	
 
@@ -95,7 +92,7 @@ public class HandyWorkerEndosementServiceTest extends AbstractTest{
 			public void testDeleteHandyWorkerEndorsement(){
 				HandyWorkerEndorsement handyWorkerEndorsement;
 				Collection<HandyWorkerEndorsement> handyWorkerEndorsements;
-				super.authenticate("handyworker3");								
+				super.authenticate("customer3");								
 
 				handyWorkerEndorsement = (HandyWorkerEndorsement) handyWorkerEndorsementService.findAll().toArray()[0];			
 

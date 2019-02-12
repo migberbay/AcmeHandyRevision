@@ -27,7 +27,7 @@ public class CustomerEndorsementServiceTest extends AbstractTest{
 		private CustomerEndorsementService customerEndorsementService;
 
 		@Autowired
-		private HandyWorkerService handyWorkerService;
+		private CustomerService customerService;
 		
 		
 		// Tests ----------------------------------------------------------------------
@@ -51,17 +51,17 @@ public class CustomerEndorsementServiceTest extends AbstractTest{
 		@Test 
 		public void testSaveCustomerEndorsement(){
 			CustomerEndorsement customerEndorsement, saved;
-			HandyWorker hw;
+			Customer c;
 			Collection<CustomerEndorsement> customerEndorsements;
-			super.authenticate("customer1");						
+			super.authenticate("handyworker1");						
 			customerEndorsement = customerEndorsementService.create();					
-			hw = (HandyWorker) handyWorkerService.findAll().toArray()[0];
+			c = (Customer) customerService.findAll().toArray()[0];
 			
 			Date current = new Date(System.currentTimeMillis() - 1000);
 			
 			customerEndorsement.setMoment(current);
 			customerEndorsement.setText("Esto es un texto de prueba");
-			customerEndorsement.setHandyWorker(hw);
+			customerEndorsement.setCustomer(c);
 			saved = customerEndorsementService.save(customerEndorsement);					
 
 			customerEndorsements = customerEndorsementService.findAll();				
@@ -76,17 +76,10 @@ public class CustomerEndorsementServiceTest extends AbstractTest{
 		@Test 
 		public void testUpdateCustomerEndorsement(){
 			CustomerEndorsement customerEndorsement;
-			super.authenticate("customer2");						
-			Collection<HandyWorker> workers;
-			HandyWorker haw = new HandyWorker();
+			super.authenticate("handyworker2");						
 
 			customerEndorsement = (CustomerEndorsement) customerEndorsementService.findAll().toArray()[0];
-			workers = handyWorkerService.findAll();
-			for(HandyWorker w: workers){
-				if(w.getMake().equals("Juan Parra")) haw=w;
-				break;
-			}
-			customerEndorsement.setHandyWorker(haw);
+
 			customerEndorsement.setText("Texto de prueba 2");	
 
 			customerEndorsementService.save(customerEndorsement);				
@@ -100,7 +93,7 @@ public class CustomerEndorsementServiceTest extends AbstractTest{
 		public void testDeleteCustomerEndorsements(){
 			CustomerEndorsement customerEndorsement;
 			Collection<CustomerEndorsement> customerEndorsements;
-			super.authenticate("customer1");								
+			super.authenticate("handyworker1");								
 
 			customerEndorsement = (CustomerEndorsement) customerEndorsementService.findAll().toArray()[0];
 

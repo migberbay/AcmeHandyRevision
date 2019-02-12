@@ -87,15 +87,12 @@ public class BoxService {
 	public void addMessageToBox(Box box, Message message) {
 
 		List<Integer> aux = new ArrayList<>(box.getMessages());
-		System.out.println(box.getMessages());
 		
 		aux.add(0, message.getId()); // los mensajes nuevos siempre se ponen primero.
 		box.setMessages(aux);
 		
 		this.save(box);
 		
-		System.out.println(box.getMessages());
-
 	}
 	
 	public Box findByActorAndName(Actor actor, String boxName){

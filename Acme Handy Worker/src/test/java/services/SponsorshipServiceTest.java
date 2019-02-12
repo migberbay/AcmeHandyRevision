@@ -40,7 +40,7 @@ public class SponsorshipServiceTest extends AbstractTest{
 		
 		Assert.isNull(res.getBanner());
 		Assert.isNull(res.getCreditCard());
-		Assert.isNull(res.getSponsor());
+		Assert.notNull(res.getSponsor());
 		Assert.isNull(res.getLink());
 		Assert.isNull(res.getTutorial());
 		

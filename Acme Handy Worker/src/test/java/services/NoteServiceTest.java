@@ -40,7 +40,7 @@ public class NoteServiceTest extends AbstractTest {
 		Assert.isNull(note.getCustomerComment());
 		Assert.isNull(note.getHandyWorkerComment());
 		Assert.isNull(note.getRefereeComment());
-		Assert.isNull(note.getMoment());
+		Assert.notNull(note.getMoment());
 						
 		super.authenticate(null);
 	}
@@ -53,7 +53,7 @@ public class NoteServiceTest extends AbstractTest {
 		Assert.isNull(note.getCustomerComment());
 		Assert.isNull(note.getHandyWorkerComment());
 		Assert.isNull(note.getRefereeComment());
-		Assert.isNull(note.getMoment());
+		Assert.notNull(note.getMoment());
 		super.authenticate(null);
 	}
 	
@@ -65,7 +65,7 @@ public class NoteServiceTest extends AbstractTest {
 		Assert.isNull(note.getCustomerComment());
 		Assert.isNull(note.getHandyWorkerComment());
 		Assert.isNull(note.getRefereeComment());
-		Assert.isNull(note.getMoment());
+		Assert.notNull(note.getMoment());
 		super.authenticate(null);
 	}
 	
@@ -81,8 +81,7 @@ public class NoteServiceTest extends AbstractTest {
 		report = (Report) reportService.findAll().toArray()[0];				// Recuperamos el report al que queremos asociar la nota
 		
 		note.setRefereeComment("Referee comment");			// Completamos los atributos de note
-		note.setCustomerComment("");
-		note.setHandyWorkerComment("");
+
 		note.setReport(report);
 		
 		saved = noteService.save(note);						// Guardamos la nota	
@@ -102,9 +101,7 @@ public class NoteServiceTest extends AbstractTest {
 		note = noteService.create();						// Creamos la nota
 		report = (Report) reportService.findAll().toArray()[0];				// Recuperamos el report al que queremos asociar la nota
 		
-		note.setRefereeComment("");							// Completamos los atributos de note
 		note.setCustomerComment("Customer comment");
-		note.setHandyWorkerComment("Hello");
 		note.setReport(report);
 		
 		saved = noteService.save(note);					// Guardamos la nota	
@@ -124,8 +121,7 @@ public class NoteServiceTest extends AbstractTest {
 		note = noteService.create();						// Creamos la nota
 		report = (Report) reportService.findAll().toArray()[0];				// Recuperamos el report al que queremos asociar la nota
 		
-		note.setRefereeComment("");							// Completamos los atributos de note
-		note.setCustomerComment("");
+
 		note.setHandyWorkerComment("Hello");
 		note.setReport(report);
 		

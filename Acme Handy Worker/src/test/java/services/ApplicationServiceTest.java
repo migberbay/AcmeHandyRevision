@@ -176,7 +176,6 @@ public class ApplicationServiceTest extends AbstractTest {
 		Application application = (Application) applicationService.findAll()
 				.toArray()[11];
 		applicationService.changeStatus(application, c);
-		//TODO:Falla en el sendSystemMessage no puedo hacer nada por ahora 
 
 		unauthenticate();
 	}

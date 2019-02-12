@@ -72,7 +72,6 @@ public class NoteService {
 			millis = System.currentTimeMillis() - 1000;
 			current = new Date(millis);
 			n.setMoment(current);
-
 			//Comprobamos que el campo que esté lleno sea el del actor creando la nota
 			Assert.isTrue(userAccount.getAuthorities().contains(handyWorkerAuthority) || n.getHandyWorkerComment() == null);
 			Assert.isTrue(userAccount.getAuthorities().contains(refereeAuthority) || n.getRefereeComment() == null);
