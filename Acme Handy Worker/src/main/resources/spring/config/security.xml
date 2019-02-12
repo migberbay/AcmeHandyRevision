@@ -85,6 +85,8 @@
 		<security:intercept-url pattern="/complaint/referee/list.do" access="hasRole('REFEREE')" />  
 		<security:intercept-url pattern="/complaint/referee/listNoReport.do" access="hasRole('REFEREE')" /> 
 		<security:intercept-url pattern="/report/referee/**" access="hasRole('REFEREE')" />  
+		
+		<security:intercept-url pattern="/sponsorship/sponsor/**" access="hasRole('SPONSOR')" />
 
 		<security:intercept-url pattern="/complaint/customer/**" access="hasRole('CUSTOMER')"/>		
 		<security:intercept-url pattern="/fixUpTask/customer/**" access="hasRole('CUSTOMER')" />
