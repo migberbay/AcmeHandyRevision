@@ -79,16 +79,11 @@ public class FinderServiceTest extends AbstractTest {
 		this.authenticate("handyworker12");
 		Finder finder;
 		finder = this.finderService.create();
-		finder.setKeyword("xxx");
-		finder.setMaxPrice(100.0);
-		finder.setMinPrice(50.0);
-		final Date fecha = new Date(01/01/2018);
-		finder.setStartDate(fecha);
-		finder.setEndDate(fecha);
-		finder.setCategory(null);
+
 		finder.setHandyWorker(saved);
 //		final Collection<FixUpTask> fixUpTasks = new ArrayList<FixUpTask>();
 //		finder.setFixUpTasks(fixUpTasks);
+		System.out.println(" test finder id " + finder.getId());
 		Finder savedf = finderService.save(finder);
 		//TODO: no quiero tocar el metodo de carlos que lo arregle el, da fallo en el save.
 		Collection<Finder> finders = finderService.findAll();
