@@ -1533,29 +1533,44 @@
 	<!-- SPONSORSHIPS -->
 
 	<bean id="sponsorship1" class="domain.Sponsorship">
-		<property name="banner" value="http://www.banner1.com" />
-		<property name="link" value="http://www.sponsorship1.com" />
+		<property name="banner" value="https://www.trivantis.com/wp-content/uploads/2012/11/test-review-banner1.png" />
+		<property name="link" value="https://www.3djuegos.com/trucos-juegos/0/todos/" />
 		<property name="creditCard" ref="creditCard5" />
 		<property name="sponsor" ref="sponsor1" />
 		<property name="tutorial" ref="tutorial1" />
 	</bean>
 
 	<bean id="sponsorship2" class="domain.Sponsorship">
-		<property name="banner" value="http://www.banner2.com" />
-		<property name="link" value="http://www.sponsorship2.com" />
+		<property name="banner" value="https://image.jimcdn.com/app/cms/image/transf/dimension=990x10000:format=jpg/path/safeff283135903fb/image/i20a93875e12c4be9/version/1524056946/image.jpg" />
+		<property name="link" value="https://www.3djuegos.com/novedades/especiales/juegos/0f0f0f0/fecha/" />
 		<property name="creditCard" ref="creditCard6" />
 		<property name="sponsor" ref="sponsor2" />
 		<property name="tutorial" ref="tutorial2" />
 	</bean>
 
 	<bean id="sponsorship3" class="domain.Sponsorship">
-		<property name="banner" value="http://www.banner3.com" />
-		<property name="link" value="http://www.sponsorship3.com" />
+		<property name="banner" value="http://apps.testinsane.com/mindmaps/Content/images/Mindmap%20Apps%20Website%20Banner%202.jpg" />
+		<property name="link" value="https://www.3djuegos.com/novedades/analisis/juegos/0f0f0f0/fecha/" />
 		<property name="creditCard" ref="creditCard7" />
 		<property name="sponsor" ref="sponsor3" />
 		<property name="tutorial" ref="tutorial3" />
 	</bean>
-
+	
+	<bean id="sponsorship4" class="domain.Sponsorship">
+		<property name="banner" value="https://2.bp.blogspot.com/-TpeezXaMnKY/WLQyc70stAI/AAAAAAAAJxM/QxRTmXrnS7o8yJglwu9c3zVNAp8JTLz1gCLcB/s1600/youtube.png" />
+		<property name="link" value="https://www.3djuegos.com/novedades/noticias/juegos/0f0f0f0/fecha/" />
+		<property name="creditCard" ref="creditCard3" />
+		<property name="sponsor" ref="sponsor1" />
+		<property name="tutorial" ref="tutorial1" />
+	</bean>
+	
+	<bean id="sponsorship5" class="domain.Sponsorship">
+		<property name="banner" value="https://www.gastronomistas.com/wp-content/uploads/banner-test.png" />
+		<property name="link" value="https://www.3djuegos.com/index.php?zona=top100" />
+		<property name="creditCard" ref="creditCard4" />
+		<property name="sponsor" ref="sponsor2" />
+		<property name="tutorial" ref="tutorial2" />
+	</bean>
 
 	<!-- FIX-UP TASKS -->
 

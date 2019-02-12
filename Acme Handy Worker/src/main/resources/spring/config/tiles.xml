@@ -29,6 +29,7 @@
 		<value>/views/handyWorker/tiles.xml</value>
 		<value>/views/referee/tiles.xml</value>
 		<value>/views/sponsor/tiles.xml</value>
+		<value>/views/sponsorship/tiles.xml</value>
 		<!-- This file does not exist <value>/views/profile/tiles.xml</value> -->
 		<value>/views/fixUpTask/tiles.xml</value>
 		<value>/views/finder/tiles.xml</value>

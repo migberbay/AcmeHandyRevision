@@ -29,6 +29,7 @@
 		<value>/views/fixUpTask/messages</value>
 		<value>/views/message/messages</value>
 		<value>/views/sponsor/messages</value>
+		<value>/views/sponsorship/messages</value>
 		<value>/views/handyWorker/messages</value>
 		<value>/views/complaint/messages</value>
 		<value>/views/box/messages</value>
