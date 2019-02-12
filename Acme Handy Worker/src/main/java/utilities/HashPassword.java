@@ -25,8 +25,9 @@ public class HashPassword {
 		String line, hash;
 
 		try {
-			System.out.println("HashPassword 1.18");
-			System.out.println("-----------------");
+			System.out.println("HashPassword 1.18.1");
+			System.out.println("-------------------");
+			System.out.println();
 
 			encoder = new Md5PasswordEncoder();
 			reader = new ConsoleReader();

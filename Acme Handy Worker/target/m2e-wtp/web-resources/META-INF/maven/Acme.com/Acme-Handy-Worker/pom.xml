@@ -1,18 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<!-- 
-  * pom.xml 
-  * 
-  * Copyright (C) 2018 Universidad de Sevilla 
-  * 
-  * The use of this project is hereby constrained to the conditions of the 
-  * TDG Licence, a copy of which you may download from 
-  * http://www.tdg-seville.info/License.html 
- -->
- 
-<project 
-	xmlns="http://maven.apache.org/POM/4.0.0" 
-	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+<!-- * pom.xml * * Copyright (C) 2018 Universidad de Sevilla * * The use 
+	of this project is hereby constrained to the conditions of the * TDG Licence, 
+	a copy of which you may download from * http://www.tdg-seville.info/License.html -->
+
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 
 	<modelVersion>4.0.0</modelVersion>
@@ -23,17 +15,16 @@
 	<artifactId>Acme-Handy-Worker</artifactId>
 	<version>0.0.0-SNAPSHOT</version>
 	<packaging>war</packaging>
-	
+
 	<properties>
-	    	<project.build.sourceEncoding>ISO-8859-1</project.build.sourceEncoding>
-  	</properties>
+		<project.build.sourceEncoding>ISO-8859-1</project.build.sourceEncoding>
+	</properties>
 
 	<!-- Indexing information -->
 
 	<name>Acme Handy Worker</name>
 	<url>http://www.acme-handy-worker.com</url>
-	<description>This is D&amp;T's acme handy worker project.</description>
-	
+
 	<!-- Build commands -->
 
 	<build>
@@ -87,6 +78,17 @@
 				</configuration>
 			</plugin>
 
+			<!-- Surefire -->
+
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-surefire-plugin</artifactId>
+				<version>2.22.1</version>
+				<configuration>
+					<skipTests>true</skipTests>
+				</configuration>
+			</plugin>
+
 		</plugins>
 	</build>
 
@@ -117,8 +119,8 @@
 		</repository>
 
 	</repositories>
-	
-	<!--  Dependencies -->
+
+	<!-- Dependencies -->
 
 	<dependencies>
 
@@ -155,11 +157,11 @@
 			<exclusions>
 				<exclusion>
 					<groupId>org.aspectj</groupId>
-					<artifactId>aspectjweaver</artifactId>									
-			</exclusion>
+					<artifactId>aspectjweaver</artifactId>
+				</exclusion>
 			</exclusions>
 		</dependency>
-				
+
 		<!-- Spring Framework - Data -->
 
 		<dependency>
@@ -187,23 +189,23 @@
 			<artifactId>spring-security-taglibs</artifactId>
 			<version>3.2.0.RELEASE</version>
 		</dependency>
-		
+
 		<!-- Spring Framework - Testing -->
-		
+
 		<dependency>
 			<groupId>org.springframework</groupId>
 			<artifactId>spring-test</artifactId>
 			<version>3.2.4.RELEASE</version>
 		</dependency>
-		
+
 		<!-- Apache -->
 
 		<dependency>
-		    <groupId>org.apache.tiles</groupId>
-		    <artifactId>tiles-core</artifactId>
-		    <version>2.2.2</version>
+			<groupId>org.apache.tiles</groupId>
+			<artifactId>tiles-core</artifactId>
+			<version>2.2.2</version>
 		</dependency>
-		
+
 		<dependency>
 			<groupId>org.apache.tiles</groupId>
 			<artifactId>tiles-servlet</artifactId>
@@ -225,25 +227,25 @@
 		</dependency>
 
 		<!-- Hibernate -->
-	
+
 		<dependency>
 			<groupId>org.hibernate</groupId>
 			<artifactId>hibernate-entitymanager</artifactId>
 			<version>4.3.0.Final</version>
 		</dependency>
-		
+
 		<dependency>
 			<groupId>org.hibernate</groupId>
 			<artifactId>hibernate-validator</artifactId>
 			<version>4.3.1.Final</version>
 		</dependency>
-	
+
 		<dependency>
 			<groupId>org.hibernate</groupId>
 			<artifactId>hibernate-c3p0</artifactId>
 			<version>4.2.3.Final</version>
 		</dependency>
-		
+
 		<!-- Javax -->
 
 		<dependency>
@@ -265,7 +267,7 @@
 			<artifactId>jstl</artifactId>
 			<version>1.2</version>
 		</dependency>
-		
+
 		<!-- Display Tag -->
 
 		<dependency>
@@ -275,10 +277,10 @@
 		</dependency>
 
 		<!-- Standard taglibs -->
-								
+
 		<dependency>
 			<groupId>taglibs</groupId>
-			<artifactId>standard</artifactId>			
+			<artifactId>standard</artifactId>
 			<version>1.1.2</version>
 			<scope>provided</scope>
 		</dependency>
@@ -290,7 +292,7 @@
 			<artifactId>junit</artifactId>
 			<version>4.11</version>
 		</dependency>
-		
+
 		<!-- Dependency patches -->
 
 		<dependency>
@@ -298,19 +300,20 @@
 			<artifactId>joda-time</artifactId>
 			<version>2.2</version>
 		</dependency>
-	            
+
 		<dependency>
 			<groupId>org.slf4j</groupId>
 			<artifactId>slf4j-log4j12</artifactId>
 			<version>1.7.5</version>
 		</dependency>
-		
+
 		<dependency>
-		    <groupId>org.aspectj</groupId>
-		    <artifactId>aspectjweaver</artifactId>
-		    <version>1.7.4</version>
+			<groupId>org.aspectj</groupId>
+			<artifactId>aspectjweaver</artifactId>
+			<version>1.7.4</version>
 		</dependency>
-		
+
 	</dependencies>
 
+	<description>This is D&amp;T's acme handy worker project.</description>
 </project> 

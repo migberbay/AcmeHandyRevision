@@ -29,9 +29,9 @@
 
 	<bean id="dataSource" class="com.mchange.v2.c3p0.ComboPooledDataSource" destroy-method="close">
 		<property name="driverClass" value="com.mysql.jdbc.Driver" />
-		<property name="jdbcUrl" value="jdbc:mysql://localhost:3306/Acme-Handy-Worker" />
-		<property name="user" value="acme-user" />
-		<property name="password" value="ACME-Us3r-P@ssw0rd" />
+		<property name="jdbcUrl" value="jdbc:mysql://bywtnyge0qcbfemhyq2j-mysql.services.clever-cloud.com:3306/bywtnyge0qcbfemhyq2j" />
+		<property name="user" value="ucdwjcgqcih1jgrryfsj" />
+		<property name="password" value="MrItFFaH7R1p9EdaTa00" />
 
 		<property name="minPoolSize" value="1"/>
 		<property name="maxPoolSize" value="5"/>
@@ -54,6 +54,7 @@
 		<prop key="hibernate.format_sql">true</prop>		
 		<prop key="hibernate.cglib.use_reflection_optimizer">true</prop>
 		<prop key="hibernate.ejb.entitymanager_factory_name">entity-manager</prop>	
+		<prop key="hibernate.ejb.naming_strategy">org.hibernate.cfg.ImprovedNamingStrategy</prop>
 	</util:properties>
 
 </beans>
