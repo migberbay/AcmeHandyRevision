@@ -52,10 +52,11 @@
 		<security:intercept-url pattern="/actor/**" access="isAuthenticated()" />
 		
 		
-		<security:intercept-url pattern="/admin/admin/**" access="hasRole('ADMIN')" /> 
+		<security:intercept-url pattern="/admin/admin/**" access="hasRole('ADMIN')" />
 		<security:intercept-url pattern="/userAccount/admin/**" access="hasRole('ADMIN')" /> 
 		<security:intercept-url pattern="/curricula/handyworker/**" access="hasRole('HANDYWORKER')" />
 		<security:intercept-url pattern="/handyworker/application/**" access="hasRole('HANDYWORKER')" />
+		<security:intercept-url pattern="/handyworker/finder/filter.do**" access="hasRole('HANDYWORKER')" />
 		<security:intercept-url pattern="/tutorial/handyworker/**" access="hasRole('HANDYWORKER')" />
 		<security:intercept-url pattern="/handyworker/section/**" access="hasRole('HANDYWORKER')" />
 		<security:intercept-url pattern="/customer/application/**" access="hasRole('CUSTOMER')" />

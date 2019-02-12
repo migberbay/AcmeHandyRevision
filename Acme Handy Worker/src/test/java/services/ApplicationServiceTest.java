@@ -172,9 +172,9 @@ public class ApplicationServiceTest extends AbstractTest {
 
 		// Application application = applicationService.findOne(15982);
 		Application application = (Application) applicationService.findAll()
-				.toArray()[11];
+				.toArray()[1];
 		applicationService.changeStatus(application, c);
-
+		
 		unauthenticate();
 	}
 }

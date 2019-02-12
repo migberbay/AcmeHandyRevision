@@ -40,7 +40,7 @@ public class BoxServiceTest extends AbstractTest {
 	@Test
 	public void testCreate() {
 
-		authenticate("admin1"); // 15720
+		authenticate("admin"); // 15720
 
 		// Actor actor = actorService.findOne(15720);
 
@@ -61,7 +61,7 @@ public class BoxServiceTest extends AbstractTest {
 	@Test
 	public void testSave() {
 
-		authenticate("admin1"); // 15720
+		authenticate("admin"); // 15720
 
 		// Actor actor = actorService.findOne(15720);
 
@@ -76,13 +76,13 @@ public class BoxServiceTest extends AbstractTest {
 
 		result = boxService.save(box);
 
-		Assert.isTrue(boxService.findByActorId(15720).contains(result));
+		Assert.isTrue(boxService.findByActorId(actor.getId()).contains(result));
 		Assert.isTrue(boxService.findAll().contains(result));
 	}
 
 	@Test
 	public void testDelete() {
-		authenticate("admin1"); // 15720
+		authenticate("admin"); // 15720
 
 		// Actor actor = actorService.findOne(15720);
 
@@ -97,19 +97,19 @@ public class BoxServiceTest extends AbstractTest {
 
 		result = boxService.save(box);
 
-		Assert.isTrue(boxService.findByActorId(15720).contains(result));
+		Assert.isTrue(boxService.findByActorId(actor.getId()).contains(result));
 		Assert.isTrue(boxService.findAll().contains(result));
 
 		boxService.delete(result);
 
-		Assert.isTrue(!boxService.findByActorId(15720).contains(result));
+		Assert.isTrue(!boxService.findByActorId(actor.getId()).contains(result));
 		Assert.isTrue(!boxService.findAll().contains(result));
 	}
 
 	@Test
 	public void testCreateUserBox() {
 
-		authenticate("admin1"); // 15720
+		authenticate("admin"); // 15720
 
 		// Actor actor = actorService.findOne(15720);
 
@@ -128,7 +128,7 @@ public class BoxServiceTest extends AbstractTest {
 	@Test
 	public void testMessageToBox() {
 
-		authenticate("admin1");
+		authenticate("admin");
 
 		// Actor sender = actorService.findOne(15730); // HandyWorker5
 		// Actor recipient = actorService.findOne(15720); // Admin1

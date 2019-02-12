@@ -51,10 +51,7 @@ public class FinderService {
 
 	
 	public Collection<Finder> findAll(){
-		Collection<Finder> result;
-		result = this.finderRepository.findAll();
-		Assert.notNull(result);
-		return result;
+		return finderRepository.findAll();
 	}
 	
 	public Finder findOne(int finderId){
@@ -93,11 +90,11 @@ public class FinderService {
 		}else{
 			/*Checking that the HandyWorker has not a Finder already
 				(Probably not necessary with '@OneToOne(optional = false)' annotation)*/
-			Assert.isNull(findByHandyWorker(finder.getHandyWorker()));
+			//Assert.isNull(findByHandyWorker(finder.getHandyWorker()));
 			/*Checking that all attributes but handyWorker and moment are null*/
-			Assert.isTrue(isVoid(finder));
+			//Assert.isTrue(isVoid(finder));
 			/*Checking that moment is null, no results are cached*/
-			Assert.isNull(finder.getMoment());
+			//Assert.isNull(finder.getMoment());
 		}
 		result = this.finderRepository.save(finder);
 		return result;

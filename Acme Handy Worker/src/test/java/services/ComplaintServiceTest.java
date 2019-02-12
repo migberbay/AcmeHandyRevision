@@ -47,10 +47,10 @@ public class ComplaintServiceTest extends AbstractTest {
 		super.authenticate("customer1");
 		complaint = complaintService.create();
 		Assert.isTrue(complaint.getAttachments().isEmpty());
-		Assert.isNull(complaint.getCustomer());
+		Assert.notNull(complaint.getCustomer());
 		Assert.isNull(complaint.getFixUpTask());
-		Assert.isNull(complaint.getMoment());
-		Assert.isNull(complaint.getTicker());
+		Assert.notNull(complaint.getMoment());
+		Assert.notNull(complaint.getTicker());
 		Assert.isNull(complaint.getDescription());
 		super.authenticate(null);
 	}

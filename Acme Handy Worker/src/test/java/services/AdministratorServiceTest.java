@@ -36,7 +36,7 @@ public class AdministratorServiceTest extends AbstractTest {
 	@Test
 	public void testCreateAdministrator() {
 
-		authenticate("admin1");
+		authenticate("admin");
 
 		Administrator administrator = administratorService
 				.createAdministrator();
@@ -59,7 +59,7 @@ public class AdministratorServiceTest extends AbstractTest {
 	@Test
 	public void testCreateReferee() {
 
-		authenticate("admin1");
+		authenticate("admin");
 
 		Referee referee = administratorService.createReferee();
 
@@ -90,7 +90,7 @@ public class AdministratorServiceTest extends AbstractTest {
 	@Test
 	public void testBanActor() {
 
-		authenticate("admin1");
+		authenticate("admin");
 
 		// Actor actor = actorService.findOne(15724); // Customer 4
 
@@ -107,7 +107,7 @@ public class AdministratorServiceTest extends AbstractTest {
 
 	@Test
 	public void testUnbanActor() {
-		authenticate("admin1");
+		authenticate("admin");
 
 		// Actor actor = actorService.findOne(15723); // Customer 3
 

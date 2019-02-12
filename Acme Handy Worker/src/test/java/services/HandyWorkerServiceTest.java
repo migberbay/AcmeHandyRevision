@@ -41,8 +41,8 @@ public class HandyWorkerServiceTest extends AbstractTest{
 			handyWorker = handyWorkerService.create();	
 			Assert.isNull(handyWorker.getAddress());
 			Assert.isNull(handyWorker.getEmail());
-			Assert.isNull(handyWorker.getIsBanned());
-			Assert.isNull(handyWorker.getIsSuspicious());
+			Assert.notNull(handyWorker.getIsBanned());
+			Assert.notNull(handyWorker.getIsSuspicious());
 			Assert.isNull(handyWorker.getMiddleName());
 			Assert.isNull(handyWorker.getName());
 			Assert.isNull(handyWorker.getPhone());
@@ -61,7 +61,7 @@ public class HandyWorkerServiceTest extends AbstractTest{
 		public void testSaveHandyWorker(){
 			HandyWorker handyWorker,saved;
 			Collection<HandyWorker> handyWorkers;
-			super.authenticate("admin1");
+			super.authenticate("admin");
 			handyWorker = handyWorkerService.create();						
 			
 			handyWorker.setName("Francisco");

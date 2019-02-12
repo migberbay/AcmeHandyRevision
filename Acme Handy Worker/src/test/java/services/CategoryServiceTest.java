@@ -29,7 +29,7 @@ public class CategoryServiceTest extends AbstractTest{
 	@Test
 	public void testCreate(){
 		
-		super.authenticate("admin1");
+		super.authenticate("admin");
 		
 		Category res = catService.create();
 		
@@ -42,7 +42,7 @@ public class CategoryServiceTest extends AbstractTest{
 	@Test
 	public void testSave(){
 		
-		super.authenticate("admin1");
+		super.authenticate("admin");
 
 		Category res = catService.create();
 		
@@ -62,7 +62,7 @@ public class CategoryServiceTest extends AbstractTest{
 	@Test
 	public void testDelete(){
 		
-		super.authenticate("admin1");
+		super.authenticate("admin");
 
 		Category res = (Category) catService.findAll().toArray()[4];
 

@@ -28,11 +28,11 @@ public class ActorServiceTest extends AbstractTest {
 	@Test
 	public void testUpdate() {
 
-		authenticate("handyworker5");
+		authenticate("handyworker1");
 
 		// Actor actor = actorService.findOne(15730);
 		
-		Actor actor = (Actor) handyWorkerService.findAll().toArray()[4];
+		Actor actor = (Actor) handyWorkerService.findByPrincipal();
 		Actor result;
 
 		// System.out.println("Actor" + actor);

@@ -32,6 +32,7 @@
 		<value>/views/handyWorker/messages</value>
 		<value>/views/complaint/messages</value>
 		<value>/views/box/messages</value>
+		<value>/views/finder/messages</value>
 		<value>/views/actor/messages</value>
 		<value>/views/tutorial/messages</value>
 		<value>/views/curricula/messages</value>

@@ -67,6 +67,10 @@ public class HandyWorkerService {
 			hw.setMake(hw.getName()+" " + hw.getMiddleName()+ " " + hw.getSurname());
 		}
 		HandyWorker saved;
+		
+		UserAccount ua = userAccountService.save(hw.getUserAccount());
+		hw.setUserAccount(ua);
+		
 		saved = handyWorkerRepository.saveAndFlush(hw);
 
 		return saved;

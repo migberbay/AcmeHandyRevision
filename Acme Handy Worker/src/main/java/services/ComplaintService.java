@@ -74,7 +74,7 @@ public class ComplaintService {
 		FixUpTask fx;
 
 		saved = complaintRepository.save(c);
-		complaintRepository.flush();
+		//complaintRepository.flush();
 
 		fx = saved.getFixUpTask();
 		fx.getComplaints().add(saved);
@@ -197,31 +197,33 @@ public class ComplaintService {
 		return res;
 	}
 
-	private String generateTicker() {
+	private String generateTicker(){
 		Date date = new Date(); // your date
 		Calendar n = Calendar.getInstance();
 		n.setTime(date);
 		String t = "";
 		String s = Integer.toString((n.get(Calendar.DAY_OF_MONTH)));
-		if (s.length() == 1)
-			s = "0" + Integer.toString((n.get(Calendar.DAY_OF_MONTH)));
+		String m = Integer.toString(n.get(Calendar.MONTH)+1);
+		if(s.length()==1) s= "0"+Integer.toString((n.get(Calendar.DAY_OF_MONTH)));
+		if(m.length()==1) m = "0"+ Integer.toString(n.get(Calendar.MONTH) +1);
 		t = t + Integer.toString(n.get(Calendar.YEAR) - 2000)
-				+ Integer.toString(n.get(Calendar.MONTH) + 1) + s + "-"
-				+ randomWordAndNumber();
+				+ m
+				+ s
+				+ "-"+ randomWordAndNumber();
 
 		return t;
 	}
-
-	private String randomWordAndNumber() {
-		String SALTCHARS = "ABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890";
-		StringBuilder salt = new StringBuilder();
-		Random rnd = new Random();
-		while (salt.length() < 6) { // length of the random string.
-			int index = (int) (rnd.nextFloat() * SALTCHARS.length());
-			salt.append(SALTCHARS.charAt(index));
-		}
-		String saltStr = salt.toString();
-		return saltStr;
+	
+	private String randomWordAndNumber(){
+		 String SALTCHARS = "ABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890";
+	        StringBuilder salt = new StringBuilder();
+	        Random rnd = new Random();
+	        while (salt.length() < 6) { // length of the random string.
+	            int index = (int) (rnd.nextFloat() * SALTCHARS.length());
+	            salt.append(SALTCHARS.charAt(index));
+	        }
+	        String saltStr = salt.toString();
+	        return saltStr;
 	}
 
 }

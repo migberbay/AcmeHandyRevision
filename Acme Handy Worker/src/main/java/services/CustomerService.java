@@ -87,7 +87,9 @@ public class CustomerService {
 		Customer result;
 
 //		Assert.isTrue(LoginService.hasRole("ADMIN"));
-
+		UserAccount ua = userAccountService.save(c.getUserAccount());
+		
+		c.setUserAccount(ua);
 		result = customerRepository.saveAndFlush(c);
 		return result;
 		

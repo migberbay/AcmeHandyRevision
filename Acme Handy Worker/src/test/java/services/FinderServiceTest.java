@@ -42,35 +42,8 @@ public class FinderServiceTest extends AbstractTest {
 
 	@Test
 	public void testCreate() {
-		HandyWorker handyWorker;
-		super.authenticate("admin1");
-		handyWorker = handyWorkerService.create();						
 		
-		handyWorker.setName("Francisco");
-		handyWorker.setSurname("Cordero");
-		handyWorker.setEmail("franky95@gmail.com");
-		handyWorker.setPhone("678534953");
-		handyWorker.setAddress("Calle San Jacinto Nº10");
-		handyWorker.setMiddleName("Fran");
-		handyWorker.setPhoto("http://www.linkedIn.com");
-
-		SocialProfile savedpr;
-		SocialProfile socialProfile = socialProfileService.create();
-		socialProfile.setLink("http://www.twitter.com/Fran");
-		socialProfile.setNick("FranC");
-		socialProfile.setSocialNetwork("Twitter");
-		savedpr = socialProfileService.save(socialProfile);
-		handyWorker.getSocialProfiles().add(savedpr);
-
-		UserAccount userAccount = handyWorker.getUserAccount();
-		userAccount.setUsername("handyWorker12");
-		userAccount.setPassword("handyWorker12");
-		handyWorker.setUserAccount(userAccount);
-
-		handyWorkerService.save(handyWorker);
-		this.authenticate(null);
-		
-		this.authenticate("handyworker12");
+		this.authenticate("handyworker1");
 		Finder finder;
 		finder = this.finderService.create();
 		finder.setKeyword("xxx");
@@ -116,7 +89,7 @@ public class FinderServiceTest extends AbstractTest {
 	@Test
 	public void testDelete() {
 		this.authenticate("handyworker3");
-		final Finder finder = this.finderService.findOne(15786);
+		final Finder finder = (Finder) this.finderService.findAll().toArray()[0];
 		this.finderService.delete(finder);
 	}
 
