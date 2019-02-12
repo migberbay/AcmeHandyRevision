@@ -13,6 +13,7 @@ import org.springframework.util.Assert;
 
 import security.LoginService;
 import security.UserAccount;
+import security.UserAccountService;
 import utilities.AbstractTest;
 import domain.Finder;
 import domain.HandyWorker;
@@ -36,26 +37,54 @@ public class FinderServiceTest extends AbstractTest {
 	
 	@Autowired
 	private SocialProfileService socialProfileService;
+	
+	@Autowired
+	private UserAccountService userAccountService;
 
 
 	// Tests --------------------
 
 	@Test
 	public void testCreate() {
+		HandyWorker handyWorker;
+		super.authenticate("admin");
+		handyWorker = handyWorkerService.create();						
 		
-		this.authenticate("handyworker1");
+		handyWorker.setName("Francisco");
+		handyWorker.setSurname("Cordero");
+		handyWorker.setEmail("franky95@gmail.com");
+		handyWorker.setPhone("678534953");
+		handyWorker.setAddress("Calle San Jacinto Nº10");
+		handyWorker.setMiddleName("Fran");
+		handyWorker.setPhoto("http://www.linkedIn.com");
+
+		SocialProfile savedpr;
+		SocialProfile socialProfile = socialProfileService.create();
+		socialProfile.setLink("http://www.twitter.com/Fran");
+		socialProfile.setNick("FranC");
+		socialProfile.setSocialNetwork("Twitter");
+		savedpr = socialProfileService.save(socialProfile);
+		handyWorker.getSocialProfiles().add(savedpr);
+
+		UserAccount userAccount = handyWorker.getUserAccount();
+		userAccount.setUsername("handyWorker12");
+		userAccount.setPassword("handyWorker12");
+		UserAccount savedua = userAccountService.save(userAccount);
+		handyWorker.setUserAccount(savedua);
+
+		HandyWorker saved = handyWorkerService.save(handyWorker);
+		this.authenticate(null);
+		
+		this.authenticate("handyworker12");
 		Finder finder;
 		finder = this.finderService.create();
-		finder.setKeyword("xxx");
-		finder.setMaxPrice(100.0);
-		finder.setMinPrice(50.0);
-		final Date fecha = new Date(01/01/2018);
-		finder.setStartDate(fecha);
-		finder.setEndDate(fecha);
-		finder.setCategory(null);
+
+		finder.setHandyWorker(saved);
 //		final Collection<FixUpTask> fixUpTasks = new ArrayList<FixUpTask>();
 //		finder.setFixUpTasks(fixUpTasks);
+		System.out.println(" test finder id " + finder.getId());
 		Finder savedf = finderService.save(finder);
+		//TODO: no quiero tocar el metodo de carlos que lo arregle el, da fallo en el save.
 		Collection<Finder> finders = finderService.findAll();
 		Assert.isTrue(finders.contains(savedf), "----- Fallo metodo create -----");
 	}

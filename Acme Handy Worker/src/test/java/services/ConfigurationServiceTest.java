@@ -49,18 +49,13 @@ public class ConfigurationServiceTest extends AbstractTest {
 		Configuration configuration,saved;
 		Collection<Configuration> configurations;
 		super.authenticate("admin");
-		configuration = configurationService.create();
+		configuration = configurationService.find();
 		
-		configuration.setBanner("http://www.pinterest.com");
-		configuration.setDefaultPhoneCode("+32");
-		configuration.setFinderCacheTime(20d);
-		configuration.setFinderQueryResults(15);
-		configuration.setVatPercentage(22d);
-		
+		configuration.setDefaultPhoneCode("+66");
+
 		saved = configurationService.save(configuration);
 
 		configurations = configurationService.findAll();
-
 		Assert.isTrue(configurations.contains(saved));
 		super.authenticate(null);
 	}

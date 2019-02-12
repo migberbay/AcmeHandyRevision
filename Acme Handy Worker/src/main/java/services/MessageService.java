@@ -147,54 +147,35 @@ public class MessageService {
 	// Other business methods -----
 
 	public void sendSystemMessages(Application application) {
-
 		Administrator sender = (Administrator) adminService.findAll().toArray()[0];
 
 		Actor handyWorker = application.getHandyWorker();
 		Actor customer = application.getFixUpTask().getCustomer();
-		
 		List<Actor> recipients = new ArrayList<>();
 		recipients.add(handyWorker);
 		recipients.add(customer);
 
 		Message message = this.create(sender);
 		message.setRecipients(recipients);
-		
+
+		message.setSubject("The status of application: "+ application.getFixUpTask().getDescription()+ " has changed \n"+
+		"El estado de la peticion: "+ application.getFixUpTask().getDescription()+" ha cambiado.");
 
 		message.setBody("The status of the fix-up Task described as: \n"
 				+ application.getFixUpTask().getDescription()
-				+ "\n has changed you shoud revise it in the system. \n\n\n" +
+				+ "\n has changed you shoud revise it in the system. \n\n" +
 
 				"El estado de la tarea de arreglo descrita como:\n"
-				+ application.getFixUpTask().getDescription()
-				+ "\n ha cambiado deberia revisar los cambios en el sistema.");
+				+ application.getFixUpTask().getDescription()+ "\n"+
+				 "ha cambiado deberia revisar los cambios en el sistema.");
+		Message saved = this.save(message);
+		Box boxhw = boxService.findByActorAndName(handyWorker, "In Box");
+		Box boxcust = boxService.findByActorAndName(customer, "In Box");
+		Box boxadmin = boxService.findByActorAndName(sender, "Out Box");
 
-		this.save(message);
-
-		Collection<Box> senderBoxes = boxService.findByActorId(sender.getId());
-		Collection<Box> handyWorkerBoxes = boxService.findByActorId(handyWorker
-				.getId());
-		Collection<Box> customerBoxes = boxService.findByActorId(customer
-				.getId());
-
-		for (Box box : handyWorkerBoxes) {
-			if (box.getName().equals("In Box")) {
-				boxService.addMessageToBox(box, message);
-			}
-		}
-
-		for (Box box : customerBoxes) {
-			if (box.getName().equals("In Box")) {
-				boxService.addMessageToBox(box, message);
-			}
-		}
-
-		for (Box box : senderBoxes) {
-			if (box.getName().equals("Out Box")) {
-				boxService.addMessageToBox(box, message);
-				
-			}
-		}
+		boxService.addMessageToBox(boxhw, saved);
+		boxService.addMessageToBox(boxcust, saved);
+		boxService.addMessageToBox(boxadmin, saved);
 	}
 
 	public void addMesageToBoxes(Message message){

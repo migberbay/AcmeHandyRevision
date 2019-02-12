@@ -61,7 +61,11 @@ public class CategoryService {
 		
 		//final Category primeraCategoria = this.getCategoryByName("category");
 		for(FixUpTask f:categoryRepository.listTaskByCategory(a.getId())){ //Hacerlo mejor con una query
-			f.setCategory(a.getParentCategory());
+			if(a.getParentCategory()!=null){
+				f.setCategory(a.getParentCategory());
+			}else{
+				f.setCategory(categoryRepository.getCategoryByName("CATEGORY"));
+			}
 			taskService.saveAdmin(f);
 		}
 		

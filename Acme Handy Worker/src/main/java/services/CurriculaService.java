@@ -102,9 +102,11 @@ public class CurriculaService {
 		n.setTime(date);
 		String t = "";
 		String s = Integer.toString((n.get(Calendar.DAY_OF_MONTH)));
+		String m = Integer.toString(n.get(Calendar.MONTH)+1);
 		if(s.length()==1) s= "0"+Integer.toString((n.get(Calendar.DAY_OF_MONTH)));
+		if(m.length()==1) m = "0"+ Integer.toString(n.get(Calendar.MONTH) +1);
 		t = t + Integer.toString(n.get(Calendar.YEAR) - 2000)
-				+ Integer.toString(n.get(Calendar.MONTH) +1)
+				+ m
 				+ s
 				+ "-"+ randomWordAndNumber();
 
