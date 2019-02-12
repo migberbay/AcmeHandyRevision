@@ -1,6 +1,5 @@
 package controllers;
 
-import domain.Complaint;
 import domain.Note;
 import domain.Report;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -15,11 +14,10 @@ import services.NoteService;
 import services.ReportService;
 
 import javax.validation.Valid;
-import java.util.Collection;
 
 @Controller
 @RequestMapping("report/")
-public class ReportController extends AbstractController{
+public class ReportController extends AbstractController {
 
 	// Services ---------------------------------------------------------------
 

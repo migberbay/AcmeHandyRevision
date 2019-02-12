@@ -21,4 +21,9 @@
 		<put-attribute name="body" value="/views/report/edit.jsp" />
 	</definition>
 
+	<definition name="report/show" extends="master.page">
+		<put-attribute name="title" value="Show report" />
+		<put-attribute name="body" value="/views/report/show.jsp" />
+	</definition>
+
 </tiles-definitions>

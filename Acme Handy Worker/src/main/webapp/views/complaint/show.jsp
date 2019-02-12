@@ -36,10 +36,13 @@
 
 <h3><spring:message code="complaint.reports"/>:</h3>
 		<display:table name="reports" id="row" requestURI="complaint/show.do" pagesize="5">
-		<jstl:if test="${referee !=null || customer !=null}">
+
 			<display:column titleKey="report.options">
+				<a href="report/show.do?reportId=${row.id}"><spring:message	code="complaint.report.show" /></a>
+				<br/>
 				<jstl:if test="${row.isDraft}">
-					<jstl:if test="${row.referee == referee}"> 
+					<jstl:if test="${row.referee == referee}">
+
 							<a href="report/referee/edit.do?reportId=${row.id}">
 								<spring:message	code="complaint.edit" />
 							</a><br/>	
@@ -55,7 +58,7 @@
 							</a><br/>
 				</jstl:if>
 			</display:column>
-		</jstl:if>
+
 			<display:column property="moment" titleKey="complaint.moment" />
 						
 			<display:column property="description" titleKey="complaint.description" />

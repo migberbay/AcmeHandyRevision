@@ -100,10 +100,14 @@
 		<security:intercept-url pattern="/customerEndorsement/**" access="isAuthenticated()" />
 		<security:intercept-url pattern="/profile/action-1.do" access="isAuthenticated()" /> 
 		<security:intercept-url pattern="/profile/action-2.do" access="isAuthenticated()" /> 
-		<security:intercept-url pattern="/profile/action-3.do" access="isAuthenticated()" /> 
-	
+		<security:intercept-url pattern="/profile/action-3.do" access="isAuthenticated()" />
+
+		<!-- Critique ... Notes -->
+		<security:intercept-url pattern="/report/show.do**" access="hasRole('HANDYWORKER')||hasRole('CUSTOMER')||hasRole('REFEREE')" />
+		<security:intercept-url pattern="/report/note/create.do**" access="hasRole('HANDYWORKER')||hasRole('CUSTOMER')||hasRole('REFEREE')" />
+		<security:intercept-url pattern="/report/note/edit.do**" access="hasRole('HANDYWORKER')||hasRole('CUSTOMER')||hasRole('REFEREE')" />
+
 		<security:intercept-url pattern="/**" access="hasRole('NONE')" />
-		
 		<security:form-login 
 			login-page="/security/login.do"
 			password-parameter="password" 
