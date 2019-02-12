@@ -1,0 +1,39 @@
+# Compiled class file
+*.class
+
+# Log file
+*.log
+
+# BlueJ files
+*.ctxt
+
+# Mobile Tools for Java (J2ME)
+.mtj.tmp/
+
+# Package Files #
+*.jar
+*.nar
+*.ear
+*.zip
+*.tar.gz
+*.rar
+
+# Temporal Files #
+*.bak
+
+# Gitbash stackdump file #
+*.stackdump
+
+# virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
+hs_err_pid*
+
+# Map of entities in the Database #
+src/main/resources/Entities.map
+/src/main/resources/Entities.map
+Entities.map
+
+# Files generated for by the IDE
+/.metadata/
+.DS_Store
+target/
+*.idea
